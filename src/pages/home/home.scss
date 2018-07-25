@@ -1,3 +1,27 @@
 page-home {
-
+    .flexline{
+        margin: 0px;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .swiper-pagination-bullet-active{
+        background:#e6b800;
+    }
+    .custom_container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .custom_container img {vertical-align: middle;}
+    
+    .custom_container .custom_content {
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        height:5rem;
+    }
 }
