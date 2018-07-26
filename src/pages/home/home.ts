@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-home',
@@ -7,18 +8,23 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  gridDiv :any;
+  constructor(public navCtrl: NavController, private iab: InAppBrowser) {
 
   }
   showSocialIcons() {
-    var gridDiv = document.querySelector(".social_icons");
-    console.log("grid socials style", gridDiv.style);
+     this.gridDiv = document.querySelector(".social_icons");
+    console.log("grid socials style", this.gridDiv.style);
 
-    if (gridDiv.style.maxHeight) {
-      gridDiv.style.maxHeight = null;
+    if (this.gridDiv.style.maxHeight) {
+      this.gridDiv.style.maxHeight = null;
     } else {
-      gridDiv.style.maxHeight = gridDiv.scrollHeight + "px";
+      this.gridDiv.style.maxHeight = this.gridDiv.scrollHeight + "px";
     }
+  }
+  showFacebook(){
+    const browser = this.iab.create('https://www.facebook.com/yalladeutsch');
+
   }
 }
 
