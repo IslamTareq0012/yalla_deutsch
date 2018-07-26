@@ -8,12 +8,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 export class HomePage {
 
-  gridDiv :any;
+  gridDiv: any;
   constructor(public navCtrl: NavController, private iab: InAppBrowser) {
 
   }
   showSocialIcons() {
-     this.gridDiv = document.querySelector(".social_icons");
+    this.gridDiv = document.querySelector(".social_icons");
     console.log("grid socials style", this.gridDiv.style);
 
     if (this.gridDiv.style.maxHeight) {
@@ -22,9 +22,11 @@ export class HomePage {
       this.gridDiv.style.maxHeight = this.gridDiv.scrollHeight + "px";
     }
   }
-  showFacebook(){
+  showFacebook() {
     const browser = this.iab.create('https://www.facebook.com/yalladeutsch');
-
+  }
+  showInstagram() {
+    const browser = this.iab.create('https://www.instagram.com/yalla_deutsch/');
   }
 }
 
