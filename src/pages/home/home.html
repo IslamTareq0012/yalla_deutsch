@@ -1,28 +1,31 @@
 <ion-header>
   <ion-navbar color="primary" text-center>
-    <ion-grid style="color:white;">
-      <ion-row>
-        <!-- <ion-col col-6>
+    <!-- <ion-grid style="color:white;">
+      <ion-row> -->
+    <!-- <ion-col col-6>
           <h6 float-right>Logo here </h6>
         </ion-col> -->
-        <ion-col col-12>
+    <!-- <ion-col col-12>
           <h6 float-center>
             Yalla Deutsch
           </h6>
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid> -->
+    <ion-title>
+      Yalla Deutsch
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding class="background-style">
-  <div style="border:1px solid #e6b800;width: 95%; margin: 5px; border-radius: 15px; padding: 1rem;">
+  <div style="border:1px solid #e6b800; margin: 5px; border-radius: 15px; padding: 1rem;">
     <ion-slides pager="true" autoplay="2000" speed="3000">
       <ion-slide>
         <div class="custom_container">
           <img style="width:100%; height: 100%" src="../../assets/imgs/C2NWWrmXUAAqpQd.jpg">
           <div class="custom_content">
-            <p style="margin: 0rem; bottom:2rem;" float-left>Lorem ipsum dolor.</p>
+            <p style="margin: 0rem; text-align: left;font-size: 14px;" float-left>Lorem ipsum dolor.</p>
           </div>
         </div>
       </ion-slide>
@@ -52,16 +55,30 @@
   <ion-grid no-padding>
     <ion-row no-padding>
       <ion-col col-6>
-        <ion-card color="secondary" style="text-align: center; border-radius: 12px;">
+        <ion-card (click)="showSocialIcons()" color="secondary" style="text-align: center; border-radius: 12px;">
           <ion-icon name="md-share" style="font-size: 10rem;" float-center></ion-icon>
           <ion-card-content class="flexline">
             Socials
           </ion-card-content>
+          <div class="social_icons">
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon style="font-size: 25px;color: black;" ios="logo-facebook" md="logo-facebook"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon  style="font-size: 25px;color: black;" ios="logo-instagram" md="logo-instagram"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </div>
         </ion-card>
       </ion-col>
       <ion-col col-6>
         <ion-card color="secondary" style="text-align: center;  border-radius: 12px;">
-          <ion-icon md="md-book" style="font-size: 10rem;" float-center></ion-icon>
+          <ion-icon md="md-book" ios="ios-book" style="font-size: 10rem;" float-center></ion-icon>
           <ion-card-content class="flexline">
             Lessons
           </ion-card-content>

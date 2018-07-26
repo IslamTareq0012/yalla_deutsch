@@ -18,10 +18,16 @@ page-home {
     .custom_container .custom_content {
         position: absolute;
         top: 0;
-        background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+        background: rgba(0, 0, 0, 0.5);
         color: #f1f1f1;
         width: 100%;
-        padding: 20px;
-        height:5rem;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    .social_icons {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
     }
 }
