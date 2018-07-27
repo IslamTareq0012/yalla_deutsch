@@ -6,13 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>events-list</ion-title>
+  <ion-navbar color="primary" text-center>
+    <ion-title>Events</ion-title>
   </ion-navbar>
-
+  <ion-toolbar color="secondary">
+    <ion-title float-left>Events</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content no-padding>
+  <ion-list [virtualScroll]="events" [approxItemHeight]="'120px'">
+    <ion-item *virtualItem="let event" (click)="eventDetails()">
+      {{event.title}}
+    </ion-item>
+  </ion-list>
 </ion-content>
