@@ -28,5 +28,14 @@ export class HomePage {
   showInstagram() {
     const browser = this.iab.create('https://www.instagram.com/yalla_deutsch/');
   }
+  openNewsList(){
+    this.navCtrl.push('NewsListPage');
+  }
+  openEventsList(){
+    this.navCtrl.push('EventsListPage');
+  }
+  openLessonsList(){
+    this.navCtrl.push('LessonsListPage');
+  }
 }
 
