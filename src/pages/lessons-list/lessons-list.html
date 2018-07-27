@@ -15,6 +15,10 @@
 </ion-header>
 
 
-<ion-content padding>
-
-</ion-content>
+  <ion-content no-padding>
+    <ion-list [virtualScroll]="lessons" [approxItemHeight]="'120px'">
+      <ion-item *virtualItem="let lesson" (click)="lessonDetails()">
+        {{lesson.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the EventsListPage page.
+ * Generated class for the LocationPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-events-list',
-  templateUrl: 'events-list.html',
+  selector: 'page-location',
+  templateUrl: 'location.html',
 })
-export class EventsListPage {
+export class LocationPage {
 
-  events = [{ title: "event" }, { title: "event title" }, { title: "other one" }];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsListPage');
-  }
-  eventDetails() {
-    this.navCtrl.push('EventDetailsPage');
+    console.log('ionViewDidLoad LocationPage');
   }
 
 }

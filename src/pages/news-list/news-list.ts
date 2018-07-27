@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news-list.html',
 })
 export class NewsListPage {
-
+  news = [{ title: "event" }, { title: "event title" }, { title: "other one" }];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewsListPage');
+  }
+
+  newsDetails() {
+    this.navCtrl.push('NewsDetailsPage');
   }
 
 }
