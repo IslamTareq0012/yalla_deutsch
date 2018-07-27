@@ -20,7 +20,7 @@ import { HomePage } from '../pages/home/home';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCsL0d4zl2zJTZYb-6lEHH-1kqHsKWlcO0'
+      apiKey: 'AIzaSyA3F55Y59yqNae7kpfW0KsS_TLmhLjmOaA'
     })
   ],
   bootstrap: [IonicApp],
