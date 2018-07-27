@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { AgmCoreModule } from '@agm/core';
 
 
 import { MyApp } from './app.component';
@@ -18,10 +17,7 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA3F55Y59yqNae7kpfW0KsS_TLmhLjmOaA'
-    })
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

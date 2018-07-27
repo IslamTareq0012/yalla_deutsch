@@ -21,5 +21,8 @@ export class EventDetailsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventDetailsPage');
   }
+  viewLocation() {
+    this.navCtrl.push('LocationPage');
+  }
 
 }
