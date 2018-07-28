@@ -6,15 +6,24 @@
 -->
 <ion-header>
   <ion-navbar color="primary" text-center>
-    <ion-title>Location</ion-title>
+    <ion-title>Yalla Deutsch</ion-title>
   </ion-navbar>
+  <ion-toolbar color="secondary">
+    <ion-title float-left>Location</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
-  <agm-map [latitude]="41.8848132" [longitude]="-87.6249471" [zoom]="18">
-    <agm-marker [latitude]="41.8848132" [longitude]="-87.6249471">
+<ion-content padding class="background-style">
+
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18">
+    <agm-marker [latitude]="lat" [longitude]="lng">
     </agm-marker>
   </agm-map>
-
+  <hr style="margin-bottom:  0px; background-color:  #e6b800;">
+  <div style="color:#e6b800;">
+    <p float-right>
+      <ion-icon name="md-pin"></ion-icon>{{address}}
+    </p>
+  </div>
 </ion-content>

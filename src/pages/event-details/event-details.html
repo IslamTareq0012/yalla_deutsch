@@ -8,10 +8,10 @@
 
 
   <ion-navbar color="primary" text-center>
-    <ion-title>Event Details</ion-title>
+    <ion-title>Yalla Deutsch</ion-title>
   </ion-navbar>
   <ion-toolbar color="secondary">
-    <ion-title float-left>Event title</ion-title>
+    <ion-title float-left>{{event.Title}}</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -19,7 +19,7 @@
 
 <ion-content padding class="background-style">
   <div>
-    <img style="width:100%; height: 100%" src="../../assets/imgs/C2NWWrmXUAAqpQd.jpg">
+    <img style="width:100%; height: 100%" [src]="event.Image">
   </div>
   <hr style="margin-bottom:  0px; background-color:  #e6b800;">
   <div style="color:#e6b800;">
@@ -27,18 +27,14 @@
       <ion-icon name="md-calendar"></ion-icon> &nbsp; Monday, June 15, 2009 1:45 PM
     </p><br><br>
     <p>
-      <strong> Details:</strong><br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis labore, doloribus
-      repudiandae dignissimos recusandae libero neque! Quia dolores saepe dolor rerum, deserunt voluptatum possimus voluptate,
-      minima a hic blanditiis deleniti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis labore, doloribus
-      repudiandae dignissimos recusandae libero neque! Quia dolores saepe dolor rerum, deserunt voluptatum possimus voluptate,
-      minima a hic blanditiis deleniti!
+      <strong> Details:</strong><br><br>{{event.Descreption}}
     </p>
     <hr style="margin-bottom:  0px; background-color:  #e6b800;">
   </div>
   <ion-grid>
     <ion-row>
       <ion-col col-4>
-        <button float-left (click)="viewLocation()"  icon-start small ion-button color="secondary"><ion-icon name="ios-navigate-outline"></ion-icon>Location</button>
+        <button float-left (click)="viewLocation(event.AddressLatitdude , event.AddressLongtiude , event.address)"  icon-start small ion-button color="secondary"><ion-icon name="ios-navigate-outline"></ion-icon>Location</button>
       </ion-col>
       <ion-col col-4 offset-4>
         <button float-right icon-start small ion-button color="secondary"><ion-icon name="md-checkmark-circle-outline"></ion-icon>Attend</button>

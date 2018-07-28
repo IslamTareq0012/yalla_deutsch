@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FCM } from '@ionic-native/fcm';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Network } from '@ionic-native/network';
 
 
 import { MyApp } from './app.component';
@@ -29,7 +30,8 @@ import { HomePage } from '../pages/home/home';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     InAppBrowser,
-    FCM
+    FCM,
+    Network
   ]
 })
 export class AppModule { }
