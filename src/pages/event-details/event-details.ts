@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Evvents } from '../../Models/Events.interface';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the EventDetailsPage page.
@@ -13,11 +14,13 @@ import { Evvents } from '../../Models/Events.interface';
 @Component({
   selector: 'page-event-details',
   templateUrl: 'event-details.html',
+  providers: [InAppBrowser]
+  
 })
 export class EventDetailsPage {
 
   event: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private iab: InAppBrowser, public navCtrl: NavController, public navParams: NavParams) {
     this.event = {} as Evvents
   }
 
@@ -27,6 +30,10 @@ export class EventDetailsPage {
   }
   viewLocation(lat, lng, address) {
     this.navCtrl.push('LocationPage', { lat: lat, lng: lng, address: address });
+  }
+  openEventForm(link){
+    const browser = this.iab.create(link);
+    
   }
 
 }

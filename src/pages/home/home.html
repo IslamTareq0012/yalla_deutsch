@@ -20,16 +20,23 @@
 
 <ion-content no-padding class="background-style">
   <div style="border:1px solid #e6b800; margin: 5px; border-radius: 15px; padding: 1rem;">
-    <ion-slides pager="true" autoplay="2000" speed="3000">
-      <ion-slide>
+    <ion-slides *ngIf="news && news.length && events && events.length " pager="true" autoplay="2000" speed="3000">
+      <ion-slide *ngFor="let event of events">
         <div class="custom_container">
-          <img style="width:100%; height: 100%" src="../../assets/imgs/C2NWWrmXUAAqpQd.jpg">
+          <img style="width: 379px; height: 379px;" [src]="event.Image" (click)="openEvent(event)">
           <div class="custom_content">
-            <p style="margin: 0rem; text-align: left;font-size: 14px;" float-left>Lorem ipsum dolor.</p>
+            <h1 style="margin: 0rem; text-align: left;" float-left>{{event.Title}}</h1>
           </div>
         </div>
       </ion-slide>
-
+      <ion-slide *ngFor="let new of news">
+        <div class="custom_container">
+          <img style="width: 379px; height: 379px;" [src]="new.Image" (click)="openNews(new)">
+          <div class="custom_content">
+            <h1 style="margin: 0rem; text-align: left;" float-left>{{new.Title}}</h1>
+          </div>
+        </div>
+      </ion-slide>
     </ion-slides>
   </div>
   <ion-grid no-padding>
@@ -68,7 +75,7 @@
                 </button>
               </ion-col>
               <ion-col>
-                <button (click)="showInstagram()"ion-button icon-start clear small>
+                <button (click)="showInstagram()" ion-button icon-start clear small>
                   <ion-icon  style="font-size: 25px;color: black;" ios="logo-instagram" md="logo-instagram"></ion-icon>
                 </button>
               </ion-col>

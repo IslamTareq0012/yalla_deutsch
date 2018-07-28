@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { FCM } from '@ionic-native/fcm';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 import { MyApp } from './app.component';
@@ -18,7 +20,16 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBjFwdUFZuRuf8IAvEAOO5QUGOQnwc-J9Y",
+      authDomain: "yalla-ddeutsch.firebaseapp.com",
+      databaseURL: "https://yalla-ddeutsch.firebaseio.com",
+      projectId: "yalla-ddeutsch",
+      storageBucket: "yalla-ddeutsch.appspot.com",
+      messagingSenderId: "932234677411"
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
