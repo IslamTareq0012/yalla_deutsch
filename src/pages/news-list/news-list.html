@@ -16,8 +16,8 @@
 
 <ion-content no-padding>
   <ion-list [virtualScroll]="news" [approxItemHeight]="'120px'">
-    <ion-item *virtualItem="let new" (click)="newsDetails()">
-      {{new.title}}
+    <ion-item *virtualItem="let new" (click)="newsDetails(new)">
+      {{new.Title}}
     </ion-item>
   </ion-list>
 </ion-content>

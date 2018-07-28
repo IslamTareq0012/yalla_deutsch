@@ -10,7 +10,7 @@
     <ion-title>News Details</ion-title>
   </ion-navbar>
   <ion-toolbar color="secondary">
-    <ion-title float-left>Event title</ion-title>
+    <ion-title float-left>{{news.Title}}</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -18,19 +18,15 @@
 
 <ion-content padding class="background-style">
   <div>
-    <img style="width:100%; height: 100%" src="../../assets/imgs/C2NWWrmXUAAqpQd.jpg">
+    <img style="width:100%; height: 100%" [src]="news.Image">
   </div>
   <hr style="margin-bottom:  0px; background-color:  #e6b800;">
   <div style="color:#e6b800;">
     <p float-right>
-      <ion-icon name="md-calendar"></ion-icon> &nbsp; Monday, June 15, 2009 1:45 PM
+      <ion-icon name="md-calendar"></ion-icon> &nbsp; {{news.Date | date: 'EEEE MMMM d y h:m:ss a' }}
     </p><br><br>
     <p>
-      <strong> Details:</strong><br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis labore, doloribus
-      repudiandae dignissimos recusandae libero neque! Quia dolores saepe dolor rerum, deserunt voluptatum possimus voluptate,
-      minima a hic blanditiis deleniti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis labore, doloribus
-      repudiandae dignissimos recusandae libero neque! Quia dolores saepe dolor rerum, deserunt voluptatum possimus voluptate,
-      minima a hic blanditiis deleniti!
+      <strong> Details:</strong><br><br> {{news.Descreption}}
     </p>
     <hr style="margin-bottom:  0px; background-color:  #e6b800;">
   </div>

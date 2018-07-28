@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { Lessons } from '../../Models/Lesson.interface';
 /**
  * Generated class for the LessonDetailsPage page.
  *
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LessonDetailsPage {
 
+  lesson: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.lesson = {} as Lessons;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LessonDetailsPage');
+    this.lesson = this.navParams.get('lesson');
   }
 
 }

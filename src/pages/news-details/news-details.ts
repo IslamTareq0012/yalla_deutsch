@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { News } from '../../Models/News.interface';
 
 /**
  * Generated class for the NewsDetailsPage page.
@@ -15,11 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsDetailsPage {
 
+  news: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.news = {} as News
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewsDetailsPage');
+    this.news = this.navParams.get('news');
   }
 
 }
