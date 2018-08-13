@@ -36,7 +36,6 @@ export class NewsListPage {
   newsDetails(news) {
     this.navCtrl.push('NewsDetailsPage', { news: news });
   }
-
   ionViewWillEnter() {
     this.network.onConnect().subscribe(data => {
       this.getData();

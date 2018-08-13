@@ -8,7 +8,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Network } from '@ionic-native/network';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { Clipboard } from '@ionic-native/clipboard';
+import { Device } from '@ionic-native/device';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -42,7 +45,11 @@ import { HomePage } from '../pages/home/home';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     InAppBrowser,
     FCM,
-    Network
+    Network,
+    LaunchNavigator,
+    Clipboard,
+    Device,
+    NativeStorage
   ]
 })
 export class AppModule { }
