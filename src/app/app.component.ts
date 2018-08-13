@@ -17,7 +17,6 @@ export class MyApp {
   rootPage: any = HomePage;
   DeviceListRef: FirebaseListObservable<any[]>;
   DeviceRef: FirebaseObjectObservable<any[]>;
-  oldData: any;
   constructor(private database: AngularFireDatabase, private fcm: FCM, private device: Device, private nativeStorage: NativeStorage, private toastCtrl: ToastController, private network: Network, private events: Events, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     platform.ready().then(() => {
@@ -62,7 +61,6 @@ export class MyApp {
               });
               return false;
             });
-            this.oldData = snapshot.val();
           });
 
         } catch (err) {
