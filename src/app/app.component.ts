@@ -50,7 +50,7 @@ export class MyApp {
             console.log("old data", snapshot.key);
             snapshot.forEach(data => {
               console.log("data key by using uuid", data.key);
-              this.DeviceRef = this.database.object('NewsList/' + data.key);
+              this.DeviceRef = this.database.object('DevicesList/' + data.key);
               var newData = {
                 fcmToken: token,
                 uuid: device.uuid
