@@ -17,6 +17,7 @@ export class MyApp {
   rootPage: any = HomePage;
   DeviceListRef: FirebaseListObservable<any[]>;
   DeviceRef: FirebaseObjectObservable<any[]>;
+  oldTokenFound = false;
   constructor(private database: AngularFireDatabase, private fcm: FCM, private device: Device, private nativeStorage: NativeStorage, private toastCtrl: ToastController, private network: Network, private events: Events, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     platform.ready().then(() => {
@@ -61,8 +62,18 @@ export class MyApp {
               });
               return false;
             });
+            this.oldTokenFound = true;
           });
-
+          if (!this.oldTokenFound) {
+            var newData = {
+              fcmToken: token,
+              uuid: device.uuid
+            }
+            newData.fcmToken = token;
+            this.DeviceListRef.push(newData).catch(err => {
+              console.log('adding device data error', err);
+            });
+          }
         } catch (err) {
           console.log("error executing firebase codes", err);
         }
