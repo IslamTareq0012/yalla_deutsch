@@ -32,14 +32,14 @@ export class EventDetailsPage {
   }
   viewLocation(address) {
     const actionSheet = this.actionSheetCtrl.create({
-      title: 'Select An Action',
+      title: 'Eine Aktion auswählen',
       buttons: [
         {
-          text: 'Copy Address',
+          text: 'Adresse kopieren',
           handler: () => {
             this.clipboard.copy(address).then(() => {
               let toast = this.toastCtrl.create({
-                message: 'Copied To Clipboard!',
+                message: 'In die Zwischenablage kopier!',
                 position: 'buttom',
                 duration: 2000
               });
@@ -50,7 +50,7 @@ export class EventDetailsPage {
             })
           }
         }, {
-          text: 'Show On Map',
+          text: 'Auf Karte zeigen',
           handler: () => {
             let options: LaunchNavigatorOptions = {
               app: this.launchNavigator.APP.GOOGLE_MAPS

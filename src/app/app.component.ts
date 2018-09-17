@@ -60,20 +60,23 @@ export class MyApp {
               this.DeviceRef.update(newData).catch(err => {
                 console.log('adding device data error', err);
               });
+              this.oldTokenFound = true;
               return false;
             });
-            this.oldTokenFound = true;
-          });
-          if (!this.oldTokenFound) {
-            var newData = {
-              fcmToken: token,
-              uuid: device.uuid
+          }).then(() => {
+            if (!this.oldTokenFound) {
+              var newData = {
+                fcmToken: token,
+                uuid: device.uuid
+              }
+              newData.fcmToken = token;
+              this.DeviceListRef=this.database.list('DevicesList');
+              this.DeviceListRef.push(newData).catch(err => {
+                console.log('adding device data error', err);
+              });
             }
-            newData.fcmToken = token;
-            this.DeviceListRef.push(newData).catch(err => {
-              console.log('adding device data error', err);
-            });
-          }
+          });
+
         } catch (err) {
           console.log("error executing firebase codes", err);
         }
